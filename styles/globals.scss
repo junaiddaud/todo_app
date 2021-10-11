@@ -1,9 +1,15 @@
+$Dark_Blue: hsl(235, 21%, 11%);
+$Light_Gray: hsl(0, 0%, 98%);
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: $Light_Gray;
+    background-image: url('../public/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+
 }
 
 a {
@@ -14,3 +20,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+
+
+
+
+
