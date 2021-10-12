@@ -183,7 +183,7 @@ else if(act===true){
     ></input>
          </div>
         <>
-        {
+        {loading?(
   fetch_todo.map(todo=>{
     return(
       <div key={todo.id} className={styles.inputGroup}>
@@ -213,6 +213,7 @@ else if(act===true){
    </div>
     )
   })
+  ):(<p>loading</p>)
   }
 </>
        
