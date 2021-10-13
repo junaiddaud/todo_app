@@ -3,5 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/api/todolist": "pages/api/todolist.js"
+  "/api/todolist": "pages/api/todolist.js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
 }

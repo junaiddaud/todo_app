@@ -47,7 +47,7 @@ const active_todo=async()=>{
       
     }
 const complete_todo=async()=>{
- 
+  setLoading(false);
   const response= await fetch('/api/todolist')
   const data=await response.json()
  
@@ -56,8 +56,9 @@ const complete_todo=async()=>{
     return todo.active===false;
    });
 
-call_complte(dataa);
+   setLoading(true);
    setFetch(dataa);
+   call_complte(dataa);
    
    
 
@@ -179,7 +180,9 @@ else if(act===true){
         </div>
 
         <div className={styles.input}>
-        <button className={styles.todo_input} onClick={submitToDo}>
+        <button className={styles.todo_input} onClick={()=>{
+          submitToDo();
+          setToDo('');}}>
 
         </button>
   <input type="text" value={toDo}
