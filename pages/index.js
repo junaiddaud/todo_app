@@ -24,11 +24,12 @@ const fetchToDo=async()=>{
     const response= await fetch('/api/todolist')
     const data=await response.json()
   
-    setFetch(data);
+    
     
     setLoading(true);
-
+    setFetch(data);
     call_complte(data);
+    
     setCount(data.length);
       }
 const active_todo=async()=>{
@@ -46,16 +47,18 @@ const active_todo=async()=>{
       
     }
 const complete_todo=async()=>{
-  setLoading(false);
+ 
   const response= await fetch('/api/todolist')
   const data=await response.json()
  
       const dataa=data.filter((todo)=>{
+        console.log("comp")
     return todo.active===false;
    });
-setLoading(true);
+
+call_complte(dataa);
    setFetch(dataa);
-   call_complte(dataa);
+   
    
 
 }
@@ -63,7 +66,7 @@ const call_complte=(data)=>{
   data.map((todo)=>{
     if(todo.active==false){
     setcomp_todo(todo.id);
-    setactive(()=>active? false:true);
+   
     }
   })
 }
@@ -130,7 +133,8 @@ useEffect(async()=>{
  
     const d=document.getElementById(comp_todo);
    d.classList.toggle(styles.tick);
-   
+   console.log(d);
+   console.log("d");
  d.nextSibling.classList.toggle(styles.la);
   
 },[comp_todo,active])
